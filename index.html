@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather App</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="app-container">
-    <h1>🌤️ Weather App</h1>
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name..." />
-      <button id="searchBtn">Search</button>
+    <div class="container">
+        <div class="weather-app">
+            <header>
+                <h1>🌤️ Weather App</h1>
+                <p class="subtitle">Get real-time weather information</p>
+            </header>
+
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="city-input" 
+                    placeholder="Enter city name..." 
+                    autocomplete="off"
+                >
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div id="error-message" class="error hidden"></div>
+            <div id="loading" class="loading hidden">Loading...</div>
+
+            <div id="weather-data" class="weather-data hidden">
+                <div class="location">
+                    <h2 id="city-name"></h2>
+                    <p id="date"></p>
+                </div>
+
+                <div class="weather-main">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <div class="temperature">
+                        <h1 id="temp"></h1>
+                        <p id="description"></p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="icon">💧</span>
+                        <div>
+                            <p class="label">Humidity</p>
+                            <p id="humidity" class="value"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">💨</span>
+                        <div>
+                            <p class="label">Wind Speed</p>
+                            <p id="wind-speed" class="value"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🌡️</span>
+                        <div>
+                            <p class="label">Feels Like</p>
+                            <p id="feels-like" class="value"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🔽</span>
+                        <div>
+                            <p class="label">Pressure</p>
+                            <p id="pressure" class="value"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="weather-info" id="weatherInfo">
-      <!-- Weather details will appear here -->
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
